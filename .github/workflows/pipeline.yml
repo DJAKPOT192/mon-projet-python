@@ -6,12 +6,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: python app.py
-build:
-  needs: [test]
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
-    - uses: actions/upload-artifact@v2
-      with:
-         name: hello
-         path: .  # Indiquez le chemin de l'artefact à télécharger
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/upload-artifact@v2
+        with:
+          name: hello
+          path: .  # Indiquez le chemin de l'artefact à télécharger.
