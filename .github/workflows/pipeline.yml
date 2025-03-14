@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: python app.py
+
   build:
     needs: test
     runs-on: ubuntu-latest
