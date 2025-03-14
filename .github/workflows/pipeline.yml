@@ -1,6 +1,5 @@
 name: CI Workflow
-on: 
-  push:
+on: push
 
 jobs:
   test:
@@ -8,7 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: python app.py
-
   build:
     needs: [test]
     runs-on: ubuntu-latest
@@ -17,4 +15,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: hello
-          path: hello.py  # Indiquez le chemin de l'artefact à télécharger
+          path: .  # Indiquez le chemin de l'artefact à télécharger
